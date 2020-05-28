@@ -1,0 +1,24 @@
+<h1 id="tableLabel">Pizzas</h1>
+
+<p>List of pizzas availables.</p>
+
+<p *ngIf="!pizzas"><em>Loading...</em></p>
+
+<table class='table table-striped' aria-labelledby="tableLabel" *ngIf="pizzas">
+  <thead>
+    <tr>
+      <th>Id</th>
+      <th>Name</th>
+      <th>Description</th>
+      <th>View</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let pizza of pizzas">
+      <td>{{ pizza.id }}</td>
+      <td>{{ pizza.name }}</td>
+      <td>{{ pizza.description }}</td>
+      <td><button (click)="viewIngredients(pizza.id)">View Toppings</button></td>
+    </tr>
+  </tbody>
+</table>

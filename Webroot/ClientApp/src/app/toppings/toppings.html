@@ -1,0 +1,32 @@
+<h1 id="tableLabel">Toppings</h1>
+
+<table>
+  <tr>
+    <td width="60%"><p>List of toppings availables.</p></td>
+    <td width="100">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td>
+    <td width="100"><button (click)="Clear()">Clear</button></td>
+    <td width="10%"><button (click)="Add()">Add</button></td>
+    <td width="10%"><button (click)="Save()">Save</button></td>
+  </tr>
+</table>
+
+<p *ngIf="!toppings"><em>Loading...</em></p>
+
+<table class='table table-striped' aria-labelledby="tableLabel" *ngIf="toppings">
+  <thead>
+    <tr>
+      <th>Id</th>
+      <th>Name</th>
+      <th>Description</th>
+      <th>Delete</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let topping of toppings">
+      <td>{{ topping.id }}</td>
+      <td>{{ topping.name }}</td>
+      <td>{{ topping.description }}</td>
+      <td><button (click)="remove(topping.id)">Remove</button></td>
+    </tr>
+  </tbody>
+</table>

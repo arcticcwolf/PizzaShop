@@ -1,0 +1,29 @@
+<h1 id="tableLabel">Add Topping</h1>
+<table>
+  <tr>
+    <td width="60%"><p>Entener name, description for the new topping.</p></td>
+    <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td>
+    <td><button (click)="save()">Save</button></td>
+    <td><button (click)="clear()">Clear</button></td>
+  </tr>
+</table>
+<!--<ul>
+  <li *ngFor="let validation of validations">{{validation}}</li>
+</ul>-->
+
+<br>
+
+<div class="panel panel-default" style="padding: 10px">
+  <b>
+    <label>Name:</label>
+    <div>
+      <textarea rows="1" style="width: 100%" [(ngModel)]="name"></textarea>
+    </div>
+  </b><br />
+  <b>
+    <label>Description:</label>
+    <div>
+      <textarea rows="3" style="width: 100%" [(ngModel)]="description"></textarea>
+    </div>
+  </b><br />
+</div>

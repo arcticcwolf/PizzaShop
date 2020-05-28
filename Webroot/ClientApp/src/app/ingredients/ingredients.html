@@ -1,0 +1,57 @@
+<h1 id="tableLabel">Add or remove Toppings</h1>
+<table>
+  <tr>
+    <td width="60%"><p>Select and press remove topping or select a new ingredient.</p></td>
+    <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td>
+    <td><button (click)="save()">Save</button></td>
+    <td><button (click)="clear()">Clear</button></td>
+  </tr>
+</table>
+<ul >
+  <li *ngFor="let validation of validations">{{validation}}</li>
+</ul>
+
+<br>
+
+<p *ngIf="!pizza"><em>Loading...</em></p>
+
+<div class="panel panel-default" style="padding: 10px"  *ngIf="pizza">
+  <b>
+    <label>Name:</label>
+    <div>
+      <textarea disabled="disabled" rows="1" style="width: 100%" [(ngModel)]="pizza.name"></textarea>
+    </div>
+  </b><br />
+  <b>
+    <label>Description:</label>
+    <div>
+      <textarea disabled="disabled" rows="3" style="width: 100%" [(ngModel)]="pizza.description"></textarea>
+    </div>
+  </b><br />
+</div>
+<div class="panel panel-default" style="padding: 10px"  *ngIf="toppings">
+  <b>
+    <label>Select an ingredient:</label>
+    <select [(ngModel)]="selectingTopping" id="selectingTopping" (ngModelChange)="addIngredient()">
+      <option *ngFor="let top of toppings" [(value)]="top.id">{{top.name}}</option>
+    </select>
+  </b>
+</div>
+<table class='table table-striped' aria-labelledby="tableLabel" *ngIf="pizza">
+  <thead>
+    <tr>
+      <th>Id</th>
+      <th>Name</th>
+      <th>Description</th>
+      <th>Remove</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let topping of pizza.toppings">
+      <td>{{ topping.id}}</td>
+      <td>{{ topping.name }}</td>
+      <td>{{ topping.description}}</td>
+      <td><button (click)="removeIngredient(topping.id)">Remove</button></td>
+    </tr>
+  </tbody>
+</table>
