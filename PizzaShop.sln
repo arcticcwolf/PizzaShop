@@ -16,6 +16,11 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution 
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Webroot", "Webroot\Webroot.csproj", "{EBB91F28-404C-4016-97FE-C9A4999E437B}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "db", "db", "{F6AB3DE3-29E4-486F-8F87-AED80C1B6AAE}"
+	ProjectSection(SolutionItems) = preProject
+		..\..\..\Documents\PizzaShopDBCreationscript.sql = ..\..\..\Documents\PizzaShopDBCreationscript.sql
+	EndProjectSection
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
